@@ -408,7 +408,7 @@ GetOLRE <- function(sigma, model, X, data, RE = c("all", "RE", "OLRE")) {
         
         X. <- do.call(cbind, model.matrix(model, type = "randomListRaw")) 
       
-      Z <- as.matrix(X.[, rownames(i), drop = FALSE])
+      Z <- as.matrix(X[, rownames(i), drop = FALSE])
       
       sum(rowSums(Z %*% i) * Z) / nrow(X.)
       
@@ -418,7 +418,7 @@ GetOLRE <- function(sigma, model, X, data, RE = c("all", "RE", "OLRE")) {
         
         out <- sapply(sigma[idx], function(i) {
           
-          Z <- as.matrix(X.[, rownames(i), drop = FALSE])
+          Z <- as.matrix(X[, rownames(i), drop = FALSE])
           
           sum(rowSums(Z %*% i) * Z) / nrow(X.)
           
@@ -426,7 +426,7 @@ GetOLRE <- function(sigma, model, X, data, RE = c("all", "RE", "OLRE")) {
           
           out <- sapply(sigma, function(i) {
             
-            Z <- as.matrix(X.[, rownames(i), drop = FALSE])
+            Z <- as.matrix(X[, rownames(i), drop = FALSE])
             
             sum(rowSums(Z %*% i) * Z) / nrow(X.)
             
